@@ -1,65 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team | Stats-O-Locked</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 </head>
-
 <body>
     <canvas id="bg-canvas"></canvas>
 
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">SOL<span class="highlight">.</span></a>
-            <div class="hamburger"><span></span><span></span><span></span></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="team.html" class="active">Team</a></li>
-                <li><a href="join.html">Join Us</a></li>
-                <li><a href="contact.html" class="btn-contact">Contact</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Our Team</h2>
-            <div class="team-grid" id="team-grid">
-                <!-- Javascript will populate this -->
-            </div>
-        </div>
-    </section>
+    <div class="container">
+        <h1 class="team-page-title">OUR <span class="highlight">TEAM</span></h1>
 
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Stats-O-Locked</h3>
-                    <p>Innovating the Future with Data.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Connect</h4>
-                    <a href="https://www.instagram.com/sol_vitb?igsh=b2s3cGIwd3p1cXdr" target="_blank">Instagram</a>
-                    <a href="https://www.linkedin.com/company/stats-o-locked-club" target="_blank">LinkedIn</a>
-                    <a href="mailto:solclub@vitbhopal.ac.in">Email Us</a>
-                </div>
-            </div>
-            <div class="copyright">&copy; 2026 Stats-O-Locked.</div>
-        </div>
-    </footer>
+        <section class="tier-section">
+            <h2 class="tier-label">Executive Board</h2>
+            <div id="exec-grid" class="team-grid"></div> </section>
 
-    <script src="background.js"></script>
+        <section class="tier-section">
+            <h2 class="tier-label">Secretariat</h2>
+            <div id="sec-grid" class="team-grid"></div> </section>
+
+        <section class="tier-section">
+            <h2 class="tier-label">Leads & Co-Leads</h2>
+            <div id="leads-grid" class="team-grid"></div> </section>
+
+        <section class="tier-section">
+            <h2 class="tier-label">Core Members</h2>
+            <div id="core-grid" class="team-grid"></div> </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="app.js"></script>
 </body>
-
 </html>
