@@ -2124,110 +2124,145 @@ footer {
     }
 }
 /* ==========================================================================
-   SOL CYBER-OVERRIDE (Paste at the bottom of 2200 lines)
-   ========================================================================== */
-/* ==========================================================================
-   TEAM PAGE EMERGENCY REPAIR (FIXES OVERLAP & LAYOUT)
+   /* ==========================================================================
+   SOL ULTIMATE FIX - ALL PAGES (Paste at the very bottom)
    ========================================================================== */
 
-/* /* ==========================================================================
-   SOL ULTIMATE REPAIR ENGINE - ALL PAGES FIXED
-   ========================================================================== */
-
-/* 1. RESET & LAYOUT FIX (Force alignment for all grids) */
-.team-grid, .research-grid, .events-grid, .benefits-grid, .teams-desc-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: 30px !important;
-    padding: 40px 0 !important;
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    align-items: stretch !important;
+/* 1. Global Page Setup */
+body {
+    background-color: #020b16 !important;
+    color: #ffffff !important;
+    overflow-x: hidden !important;
 }
 
-/* 2. THE MEGA GLOW TITLE (For Team & All Sections) */
-.team-page-title, .section-title {
+/* 2. MEGA GLOW TITLES (The Heavy Glow Fix) */
+.section-title, .team-page-title {
     font-family: 'Space Grotesk', sans-serif !important;
     font-size: clamp(2.5rem, 8vw, 4.5rem) !important;
     font-weight: 800 !important;
     text-transform: uppercase !important;
-    color: #ffffff !important;
     text-align: center !important;
-    margin-top: 140px !important; /* Navbar protection */
+    margin-top: 140px !important;
     margin-bottom: 60px !important;
-    display: block !important;
+    color: #fff !important;
     text-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 50px rgba(0, 240, 255, 0.6) !important;
 }
 
-/* 3. UNIVERSAL CARD DESIGN (Fixes Research, Team, Join cards) */
-.team-card, .research-card, .event-card, .benefit-card, .team-desc-card, .glass-panel {
+/* 3. UNIVERSAL GRID FIX (For Team, Research, Events) */
+.team-grid, .research-grid, .events-grid, .benefits-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 35px !important;
+    padding: 40px 0 !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
+}
+
+/* 4. TEAM CARDS - THE "GOLA" LOOK (Exactly what you wanted) */
+.team-card {
     background: rgba(255, 255, 255, 0.03) !important;
     border: 1px solid rgba(0, 240, 255, 0.2) !important;
     backdrop-filter: blur(12px) !important;
     border-radius: 20px !important;
-    padding: 30px !important;
-    transition: 0.4s ease !important;
-    position: relative !important;
+    padding: 40px 20px !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important; /* Centering Team Content */
+    align-items: center !important;
     text-align: center !important;
+    transition: 0.4s ease !important;
 }
 
-.team-card:hover, .research-card:hover, .event-card:hover {
+.member-photo {
+    width: 160px !important;
+    height: 160px !important;
+    border-radius: 50% !important; /* Gola Shape */
+    border: 4px solid #00f0ff !important;
+    margin-bottom: 20px !important;
+    object-fit: cover !important;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4) !important;
+}
+
+/* 5. RESEARCH & EVENT CARDS (Elegant Side-Aligned) */
+.research-card, .event-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(0, 240, 255, 0.1) !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+    transition: 0.4s ease !important;
+}
+
+.research-card:hover, .event-card:hover, .team-card:hover {
     transform: translateY(-10px) !important;
     border-color: #00f0ff !important;
     box-shadow: 0 0 30px rgba(0, 240, 255, 0.2) !important;
 }
 
-/* 4. TEAM PAGE SPECIFIC (Fixing Photos & Info) */
-.member-photo {
-    width: 160px !important;
-    height: 160px !important;
-    border-radius: 50% !important;
-    border: 3px solid #00f0ff !important;
-    margin-bottom: 20px !important;
-    object-fit: cover !important;
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3) !important;
+/* 6. LEADERBOARD TABLE FIX */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(0, 240, 255, 0.2) !important;
+    border-radius: 20px !important;
+    padding: 25px !important;
+    overflow-x: auto !important;
 }
 
-.member-info h3 { 
-    font-family: 'Space Grotesk' !important; color: #fff !important; font-size: 1.5rem !important; margin-bottom: 5px !important;
-}
-.member-info .role { 
-    color: #00f0ff !important; font-weight: 700 !important; text-transform: uppercase !important; font-size: 0.8rem !important;
+.leaderboard-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
 }
 
-/* 5. TABLE & FORMS (Leaderboard & Join Fix) */
-.leaderboard-table { width: 100% !important; border-collapse: collapse !important; margin-top: 20px !important; }
-.leaderboard-table th { color: #00f0ff !important; border-bottom: 2px solid #00f0ff !important; padding: 15px !important; text-align: left !important; }
-.leaderboard-table td { padding: 15px !important; border-bottom: 1px solid rgba(255,255,255,0.05) !important; color: #fff !important; }
-
-input, select, textarea {
-    background: rgba(0, 0, 0, 0.5) !important; border: 1px solid rgba(0, 240, 255, 0.3) !important;
-    color: white !important; padding: 12px !important; border-radius: 8px !important; width: 100% !important;
+.leaderboard-table th {
+    color: #00f0ff !important;
+    text-transform: uppercase !important;
+    padding: 15px !important;
+    border-bottom: 2px solid rgba(0, 240, 255, 0.3) !important;
 }
 
-/* 6. BUTTONS & TAGS */
+.leaderboard-table td {
+    padding: 15px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 7. TAGS & BUTTONS */
+.tag {
+    display: inline-block !important;
+    background: rgba(0, 240, 255, 0.1) !important;
+    color: #00f0ff !important;
+    border: 1px solid #00f0ff !important;
+    padding: 4px 12px !important;
+    border-radius: 50px !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+}
+
 .btn-primary, .btn-submit {
-    background: #00f0ff !important; color: #000 !important; font-weight: 800 !important;
-    padding: 12px 30px !important; border-radius: 50px !important; border: none !important;
-    box-shadow: 0 0 15px #00f0ff !important; cursor: pointer !important;
+    background: #00f0ff !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    padding: 12px 30px !important;
+    border-radius: 50px !important;
+    border: none !important;
+    box-shadow: 0 0 15px #00f0ff !important;
+    cursor: pointer !important;
+    transition: 0.3s !important;
 }
-.tag { background: rgba(0, 240, 255, 0.1) !important; color: #00f0ff !important; padding: 5px 12px !important; border-radius: 50px !important; font-size: 0.7rem !important; border: 1px solid #00f0ff !important; }
 
-/* 7. RESEARCH & EVENTS - Left Align Text (Overriding the center fix above) */
-.research-card, .event-card { align-items: flex-start !important; text-align: left !important; }
-.research-card h3, .event-card h3 { color: #fff !important; margin: 15px 0 !important; }
-.read-more, .btn-text { color: #00f0ff !important; text-decoration: none !important; font-weight: bold !important; margin-top: 15px !important; }
+.btn-primary:hover {
+    box-shadow: 0 0 30px #00f0ff !important;
+    transform: scale(1.05) !important;
+}
 
-/* 8. FAQ ACCORDION */
-.faq-question { background: none !important; border: none !important; color: #fff !important; width: 100% !important; text-align: left !important; display: flex !important; justify-content: space-between !important; padding: 20px !important; }
-.faq-item.open { border-color: #00f0ff !important; }
-
-/* 9. MOBILE FIX */
+/* 8. MOBILE OPTIMIZATION */
 @media (max-width: 768px) {
-    .team-grid, .research-grid, .events-grid { grid-template-columns: 1fr !important; padding: 20px !important; }
-    .team-page-title { margin-top: 100px !important; }
+    .team-grid, .research-grid, .events-grid {
+        grid-template-columns: 1fr !important;
+        padding: 20px !important;
+    }
+    .section-title { margin-top: 100px !important; }
 }
