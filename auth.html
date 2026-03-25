@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Stats-O-Locked</title>
+    <meta name="description" content="Sign in or create an account for Stats-O-Locked – VIT Bhopal's premier data science and AI club.">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SOL<span class="highlight">.</span></a>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><a href="contact.html" class="btn-contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Auth Container -->
+    <section class="auth-page">
+        <div class="auth-container">
+            <!-- Auth Header with Toggle -->
+            <div class="auth-header">
+                <h1 class="auth-title">Welcome to <span class="highlight">SOL</span></h1>
+                <p class="auth-subtitle">Stats-O-Locked Member Portal</p>
+                <div class="auth-toggle">
+                    <button class="toggle-btn active" id="toggle-signin" data-panel="signin">Sign In</button>
+                    <button class="toggle-btn" id="toggle-signup" data-panel="signup">Sign Up</button>
+                    <div class="toggle-slider"></div>
+                </div>
+            </div>
+
+            <!-- Sign In Form -->
+            <form class="auth-form active" id="signin-form">
+                <div class="form-group">
+                    <label for="signin-email">Email Address</label>
+                    <input type="email" id="signin-email" name="email" placeholder="yourname@vitbhopal.ac.in" required>
+                </div>
+                <div class="form-group">
+                    <label for="signin-password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="signin-password" name="password" placeholder="Enter your password" required>
+                        <button type="button" class="password-toggle" data-target="signin-password">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="forgot-password-row">
+                    <a href="#" id="forgot-password-link" class="forgot-password-link">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary auth-submit-btn" id="signin-btn">
+                    <span class="btn-text-content">Sign In</span>
+                    <span class="btn-loader" style="display:none;">
+                        <span class="spinner"></span>
+                    </span>
+                </button>
+                <p class="auth-footer-text">Don't have an account? <a href="#" id="switch-to-signup">Create one</a></p>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form class="auth-form" id="signup-form">
+                <!-- Section: Personal Info -->
+                <div class="form-section-label">Personal Information</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="signup-name" name="name" placeholder="e.g. Aarav Sharma" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-phone">Phone Number</label>
+                        <input type="tel" id="signup-phone" name="phone" placeholder="+91 98765 43210">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="signup-email" name="email" placeholder="yourname@vitbhopal.ac.in" required>
+                </div>
+
+                <!-- Section: Academic Info -->
+                <div class="form-section-label">Academic Details</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signup-reg">Registration Number <span class="required">*</span></label>
+                        <input type="text" id="signup-reg" name="registration" placeholder="e.g. 23BCE10001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-branch">Branch / Department <span class="required">*</span></label>
+                        <input type="text" id="signup-branch" name="branch" placeholder="e.g. CSE, ECE, IT" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signup-year">Year of Study <span class="required">*</span></label>
+                        <select id="signup-year" name="year" required>
+                            <option value="" disabled selected>Select Year</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                            <option value="5">5th Year (Integrated)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-interest">Area of Interest <span class="required">*</span></label>
+                        <select id="signup-interest" name="interest" required>
+                            <option value="" disabled selected>Select Interest</option>
+                            <option value="data-science">Data Science</option>
+                            <option value="ai-ml">Artificial Intelligence & ML</option>
+                            <option value="statistics">Statistics & Analytics</option>
+                            <option value="deep-learning">Deep Learning</option>
+                            <option value="nlp">Natural Language Processing</option>
+                            <option value="computer-vision">Computer Vision</option>
+                            <option value="web-dev">Web Development</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Section: Profile -->
+                <div class="form-section-label">Profile & Links</div>
+                <div class="form-group">
+                    <label for="signup-bio">About You</label>
+                    <textarea id="signup-bio" name="bio" placeholder="Tell us a bit about yourself, your skills, or what you're passionate about..." rows="3"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signup-linkedin">LinkedIn Profile</label>
+                        <input type="url" id="signup-linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-github">GitHub Profile</label>
+                        <input type="url" id="signup-github" name="github" placeholder="https://github.com/yourusername">
+                    </div>
+                </div>
+
+                <!-- Section: Account Security -->
+                <div class="form-section-label">Account Security</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signup-password">Password <span class="required">*</span></label>
+                        <div class="password-wrapper">
+                            <input type="password" id="signup-password" name="password" placeholder="Min 6 characters" required minlength="6">
+                            <button type="button" class="password-toggle" data-target="signup-password">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar" id="strength-bar"></div>
+                        </div>
+                        <span class="strength-text" id="strength-text"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm">Confirm Password <span class="required">*</span></label>
+                        <div class="password-wrapper">
+                            <input type="password" id="signup-confirm" name="confirm" placeholder="Re-enter password" required minlength="6">
+                            <button type="button" class="password-toggle" data-target="signup-confirm">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms -->
+                <div class="form-group auth-checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="signup-terms" required>
+                        <span>I agree to the <a href="#" class="highlight">Terms of Service</a> and <a href="#" class="highlight">Privacy Policy</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary auth-submit-btn" id="signup-btn">
+                    <span class="btn-text-content">Create Account</span>
+                    <span class="btn-loader" style="display:none;">
+                        <span class="spinner"></span>
+                    </span>
+                </button>
+                <p class="auth-footer-text">Already have an account? <a href="#" id="switch-to-signin">Sign in</a></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="background.js"></script>
+    <script src="supabase.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

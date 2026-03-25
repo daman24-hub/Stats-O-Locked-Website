@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us | Stats-O-Locked</title>
+    <meta name="description" content="Join Stats-O-Locked – VIT Bhopal's premier technical club for Statistics, Data Science, AI & ML. Apply for membership today.">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SOL<span class="highlight">.</span></a>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="join.html" class="active">Join Us</a></li>
+                <li><a href="contact.html" class="btn-contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Join Hero -->
+    <section class="join-hero">
+        <div class="container">
+            <h1 class="join-hero-title">Become a <span class="highlight">Member</span></h1>
+            <p class="join-hero-desc">
+                Join Stats-O-Locked and be part of VIT Bhopal's thriving community of data enthusiasts,
+                AI researchers, and future tech leaders. No experience required — just curiosity and drive.
+            </p>
+        </div>
+    </section>
+
+    <!-- Why Join Benefits -->
+    <section class="section benefits-section">
+        <div class="container">
+            <h2 class="section-title">Why Join SOL?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h3>Hands-On Learning</h3>
+                    <p>Weekly workshops on Python, R, Machine Learning, Deep Learning, and more — taught by peers who've done it.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛠️</div>
+                    <h3>Real Projects</h3>
+                    <p>Work on live data science projects, build your portfolio, and contribute to open-source research initiatives.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h3>Networking</h3>
+                    <p>Connect with alumni, industry mentors, and fellow students who share your passion for data and technology.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Competitions & Events</h3>
+                    <p>Participate in hackathons, datathons, and national-level competitions with team support and mentorship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Teams Section -->
+    <section class="section teams-desc-section">
+        <div class="container">
+            <h2 class="section-title">Our Teams</h2>
+            <p class="section-subtitle">Choose the team that matches your skills and passion. Each team plays a vital role in SOL's mission.</p>
+            <div class="teams-desc-grid">
+                <div class="team-desc-card">
+                    <div class="team-desc-icon">💻</div>
+                    <h3>Technical Team</h3>
+                    <p>Build ML models, data pipelines, and tools. Lead workshops and mentor members on cutting-edge tech stacks.</p>
+                </div>
+                <div class="team-desc-card">
+                    <div class="team-desc-icon">📋</div>
+                    <h3>Event Management</h3>
+                    <p>Plan and execute hackathons, seminars, and club events from ideation to flawless delivery.</p>
+                </div>
+                <div class="team-desc-card">
+                    <div class="team-desc-icon">📱</div>
+                    <h3>Social Media</h3>
+                    <p>Craft engaging content, manage SOL's online presence, and grow our community across platforms.</p>
+                </div>
+                <div class="team-desc-card">
+                    <div class="team-desc-icon">📢</div>
+                    <h3>PR & Outreach</h3>
+                    <p>Build partnerships, secure sponsorships, and represent SOL to the broader campus and industry network.</p>
+                </div>
+                <div class="team-desc-card">
+                    <div class="team-desc-icon">🎨</div>
+                    <h3>Creative Team</h3>
+                    <p>Design posters, banners, presentations, and visual identities that make SOL's brand stand out.</p>
+                </div>
+                <div class="team-desc-card">
+                    <div class="team-desc-icon">🔬</div>
+                    <h3>Research Team</h3>
+                    <p>Dive into academic papers, run experiments, and publish findings in data science and AI research.</p>
+                </div>
+                <div class="team-desc-card">
+                    <div class="team-desc-icon">📸</div>
+                    <h3>Photography Team</h3>
+                    <p>Capture event highlights, behind-the-scenes moments, and create visual stories of SOL's journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is there a selection process?</span>
+                        <span class="faq-chevron">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we have a simple screening process. After you submit the form, our team will review your application and may schedule a short informal chat to understand your interests. We prioritize enthusiasm over experience!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I need prior experience in data science or coding?</span>
+                        <span class="faq-chevron">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Not at all! We welcome students from all backgrounds and skill levels. Whether you're a beginner curious about data or an experienced coder, there's a place for you — especially in non-technical teams like Creative, PR, or Photography.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How much time commitment is expected?</span>
+                        <span class="faq-chevron">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We expect around 3–5 hours per week. This includes attending team meetings, working on assigned tasks, and participating in events. Flexibility is always provided during exam periods.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I switch teams later?</span>
+                        <span class="faq-chevron">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! You can request a team switch or even contribute to multiple teams. We encourage members to explore different areas within the club.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I stay updated about SOL activities?</span>
+                        <span class="faq-chevron">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Follow us on <a href="https://www.instagram.com/sol_vitb?igsh=b2s3cGIwd3p1cXdr" target="_blank">Instagram</a> and <a href="https://www.linkedin.com/company/stats-o-locked-club/" target="_blank">LinkedIn</a> for announcements. Members also get added to our WhatsApp community for real-time updates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Application Form -->
+    <section class="section join-form-section">
+        <div class="container">
+            <h2 class="section-title">Apply Now</h2>
+            <form class="join-form" id="join-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="join-name">Full Name</label>
+                        <input type="text" id="join-name" name="name" placeholder="e.g. Aarav Sharma" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="join-email">Email Address</label>
+                        <input type="email" id="join-email" name="email" placeholder="yourname@vitbhopal.ac.in" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="join-reg">Registration Number</label>
+                        <input type="text" id="join-reg" name="registration" placeholder="e.g. 23BCE10001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="join-branch">Branch / Department</label>
+                        <input type="text" id="join-branch" name="branch" placeholder="e.g. CSE, ECE, IT" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="join-year">Year of Study</label>
+                        <select id="join-year" name="year" required>
+                            <option value="" disabled selected>Select Year</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="join-interest">Area of Interest</label>
+                        <select id="join-interest" name="interest" required>
+                            <option value="" disabled selected>Select Interest</option>
+                            <option value="data-science">Data Science</option>
+                            <option value="ai-ml">Artificial Intelligence & ML</option>
+                            <option value="statistics">Statistics & Analytics</option>
+                            <option value="deep-learning">Deep Learning</option>
+                            <option value="nlp">Natural Language Processing</option>
+                            <option value="computer-vision">Computer Vision</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="join-team">Preferred Team</label>
+                    <select id="join-team" name="team" required>
+                        <option value="" disabled selected>Select a Team</option>
+                        <option value="technical">💻 Technical Team</option>
+                        <option value="event-management">📋 Event Management Team</option>
+                        <option value="social-media">📱 Social Media Team</option>
+                        <option value="pr-outreach">📢 PR & Outreach Team</option>
+                        <option value="creative">🎨 Creative Team</option>
+                        <option value="research">🔬 Research Team</option>
+                        <option value="photography">📸 Photography Team</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="join-why">Why do you want to join Stats-O-Locked?</label>
+                    <textarea id="join-why" name="motivation" placeholder="Tell us about your motivation, goals, or what excites you about data..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit" id="join-submit-btn">
+                    <span class="btn-text-content">Submit Application</span>
+                    <span class="btn-glow"></span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Stats-O-Locked</h3>
+                    <p>Innovating the Future with Data.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <a href="https://www.instagram.com/sol_vitb?igsh=b2s3cGIwd3p1cXdr" target="_blank">Instagram</a>
+                    <a href="https://www.linkedin.com/company/stats-o-locked-club" target="_blank">LinkedIn</a>
+                    <a href="mailto:solclub@vitbhopal.ac.in">Email Us</a>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 Stats-O-Locked.</div>
+        </div>
+    </footer>
+
+    <script src="background.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                // Toggle current
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

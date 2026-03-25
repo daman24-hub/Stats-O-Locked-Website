@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Stats-O-Locked</title>
+    <meta name="description" content="Get in touch with Stats-O-Locked. Reach us via email, Instagram, or LinkedIn.">
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
@@ -25,15 +26,62 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="team.html">Team</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><a href="contact.html" class="btn-contact active">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="section contact-section">
+    <!-- Contact Info Cards -->
+    <section class="section contact-info-section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <form class="contact-form">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="contact-subtitle">Have questions? Want to collaborate? Reach out through any of these channels.</p>
+            <div class="contact-cards">
+                <a href="mailto:solclub@vitbhopal.ac.in" class="contact-card" id="email-card">
+                    <div class="contact-card-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="M22 4L12 13L2 4"></path>
+                        </svg>
+                    </div>
+                    <h3>Email</h3>
+                    <p class="contact-card-value">solclub@vitbhopal.ac.in</p>
+                    <span class="contact-card-action">Send us an email →</span>
+                </a>
+                <a href="https://www.instagram.com/sol_vitb?igsh=b2s3cGIwd3p1cXdr" target="_blank" class="contact-card" id="instagram-card">
+                    <div class="contact-card-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle>
+                        </svg>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p class="contact-card-value">@sol_vitb</p>
+                    <span class="contact-card-action">Follow us →</span>
+                </a>
+                <a href="https://www.linkedin.com/company/stats-o-locked-club" target="_blank" class="contact-card" id="linkedin-card">
+                    <div class="contact-card-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p class="contact-card-value">Stats-O-Locked Club</p>
+                    <span class="contact-card-action">Connect with us →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section contact-section" style="padding-top: 40px; min-height: auto;">
+        <div class="container">
+            <h2 class="section-title">Send a Message</h2>
+            <form class="contact-form" id="contact-form">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -51,6 +99,46 @@
         </div>
     </section>
 
+    <!-- Location & Office Hours -->
+    <section class="section contact-extra-section" style="padding-top: 20px; min-height: auto;">
+        <div class="container">
+            <div class="contact-extra-grid">
+                <!-- Map -->
+                <div class="contact-map-wrapper">
+                    <h3 class="contact-extra-title">📍 Find Us</h3>
+                    <div class="map-embed">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.0!2d77.6072!3d23.0774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397ce9ceaaaaaaab%3A0xbbbbbbbbbbbbbbbb!2sVIT%20Bhopal%20University!5e0!3m2!1sen!2sin"
+                            width="100%" height="280" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Office Hours -->
+                <div class="contact-hours-wrapper">
+                    <h3 class="contact-extra-title">🕐 Response Time</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="hours-label">Club Response Time</span>
+                            <span class="hours-value">Mon – Fri, 4:00 PM – 7:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-label">Email Response</span>
+                            <span class="hours-value">Within 24 hours</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-label">Social Media DMs</span>
+                            <span class="hours-value">Within 12 hours</span>
+                        </div>
+                    </div>
+                    <div class="hours-note">
+                        <p>💡 For urgent queries, reach out on Instagram DM — we're most active there!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -60,9 +148,9 @@
                 </div>
                 <div class="footer-links">
                     <h4>Connect</h4>
-                    <a href="https://www.instagram.com/sol_vitb" target="_blank">Instagram</a>
+                    <a href="https://www.instagram.com/sol_vitb?igsh=b2s3cGIwd3p1cXdr" target="_blank">Instagram</a>
                     <a href="https://www.linkedin.com/company/stats-o-locked-club" target="_blank">LinkedIn</a>
-                    <a href="mailto:sol@vitbhopal.ac.in">Email Us</a>
+                    <a href="mailto:solclub@vitbhopal.ac.in">Email Us</a>
                 </div>
             </div>
             <div class="copyright">&copy; 2026 Stats-O-Locked.</div>

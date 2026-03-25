@@ -65,6 +65,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+
+    // ---- Auth State: Dynamic Navbar ----
+    // Add toast container if not present
+    if (!document.getElementById('toast-container')) {
+        const tc = document.createElement('div');
+        tc.className = 'toast-container';
+        tc.id = 'toast-container';
+        document.body.appendChild(tc);
+    }
+
+    // Check if supabase is available (loaded on all pages)
+    if (typeof supabase !== 'undefined') {
+        const navContainer = document.querySelector('.nav-container');
+        if (navContainer) {
+            // Create auth nav element
+            const authNav = document.createElement('div');
+            authNav.className = 'nav-auth';
+            authNav.id = 'auth-nav';
+            navContainer.appendChild(authNav);
+
+            // Check session and update navbar
+            (async () => {
+                try {
+                    const { data: { session } } = await supabase.auth.getSession();
+                    updateAuthNav(session);
+                } catch (err) {
+                    console.error('Auth check failed:', err);
+                    updateAuthNav(null);
+                }
+            })();
+
+            // Listen for auth state changes
+            supabase.auth.onAuthStateChange((event, session) => {
+                updateAuthNav(session);
+            });
+        }
+    }
+
+    function updateAuthNav(session) {
+        const authNav = document.getElementById('auth-nav');
+        if (!authNav) return;
+
+        if (session && session.user) {
+            const name = session.user.user_metadata?.full_name || session.user.email;
+            const initial = name.charAt(0).toUpperCase();
+            authNav.innerHTML = `
+                <div class="user-avatar" title="${name}">${initial}</div>
+                <button class="nav-logout-btn" id="nav-logout-btn">Logout</button>
+            `;
+            // Attach logout handler
+            document.getElementById('nav-logout-btn').addEventListener('click', async () => {
+                await supabase.auth.signOut();
+                window.location.href = 'index.html';
+            });
+        } else {
+            authNav.innerHTML = `
+                <a href="auth.html" class="nav-auth-btn">Login</a>
+            `;
+        }
+    }
 });
 
 // Mock Data Population (Will be replaced by Supabase fetching)
