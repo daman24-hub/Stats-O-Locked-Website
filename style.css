@@ -2126,143 +2126,96 @@ footer {
 /* ==========================================================================
    /* ==========================================================================
    SOL ULTIMATE FIX - ALL PAGES (Paste at the very bottom)
+/* ==========================================================================
+   SOL ULTIMATE SYSTEM RECOVERY - FINAL DOSE
    ========================================================================== */
 
-/* 1. Global Page Setup */
-body {
-    background-color: #020b16 !important;
-    color: #ffffff !important;
-    overflow-x: hidden !important;
-}
-
-/* 2. MEGA GLOW TITLES (The Heavy Glow Fix) */
-.section-title, .team-page-title {
-    font-family: 'Space Grotesk', sans-serif !important;
-    font-size: clamp(2.5rem, 8vw, 4.5rem) !important;
-    font-weight: 800 !important;
-    text-transform: uppercase !important;
-    text-align: center !important;
-    margin-top: 140px !important;
-    margin-bottom: 60px !important;
-    color: #fff !important;
-    text-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 50px rgba(0, 240, 255, 0.6) !important;
-}
-
-/* 3. UNIVERSAL GRID FIX (For Team, Research, Events) */
-.team-grid, .research-grid, .events-grid, .benefits-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: 35px !important;
-    padding: 40px 0 !important;
+/* 1. TEAM PAGE FIX - EXACT CIRCLE LOOK */
+.team-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important; /* Cards center mein align honge */
+    gap: 40px !important;
+    padding: 50px 20px !important;
+    width: 100% !important;
     max-width: 1200px !important;
     margin: 0 auto !important;
-    justify-content: center !important;
 }
 
-/* 4. TEAM CARDS - THE "GOLA" LOOK (Exactly what you wanted) */
 .team-card {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(0, 240, 255, 0.2) !important;
-    backdrop-filter: blur(12px) !important;
-    border-radius: 20px !important;
-    padding: 40px 20px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(0, 240, 255, 0.3) !important;
+    border-radius: 25px !important;
+    padding: 40px 30px !important;
+    width: 320px !important; /* Fixed width taaki cards bikhre nahi */
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: center !important; /* Content center mein */
     text-align: center !important;
-    transition: 0.4s ease !important;
+    backdrop-filter: blur(15px) !important;
+    transition: 0.4s !important;
 }
 
 .member-photo {
-    width: 160px !important;
-    height: 160px !important;
-    border-radius: 50% !important; /* Gola Shape */
+    width: 180px !important;
+    height: 180px !important;
+    border-radius: 50% !important; /* PERFECT GOLA */
     border: 4px solid #00f0ff !important;
-    margin-bottom: 20px !important;
     object-fit: cover !important;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4) !important;
+    margin-bottom: 25px !important;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.4) !important;
 }
 
-/* 5. RESEARCH & EVENT CARDS (Elegant Side-Aligned) */
+/* 2. HEAVY GLOW TITLE FIX */
+.team-page-title, .section-title {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 4rem !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff !important;
+    margin-top: 150px !important;
+    margin-bottom: 50px !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+/* 3. RESEARCH & EVENTS PAGE FIX */
+.research-grid, .events-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    gap: 30px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
 .research-card, .event-card {
     background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(0, 240, 255, 0.1) !important;
+    border: 1px solid rgba(0, 240, 255, 0.15) !important;
     border-radius: 20px !important;
     padding: 30px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: left !important;
-    transition: 0.4s ease !important;
+    text-align: left !important; /* Inka text left hi rahega */
 }
 
-.research-card:hover, .event-card:hover, .team-card:hover {
-    transform: translateY(-10px) !important;
-    border-color: #00f0ff !important;
-    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2) !important;
-}
-
-/* 6. LEADERBOARD TABLE FIX */
-.glass-panel {
-    background: rgba(255, 255, 255, 0.02) !important;
-    border: 1px solid rgba(0, 240, 255, 0.2) !important;
-    border-radius: 20px !important;
-    padding: 25px !important;
-    overflow-x: auto !important;
-}
-
+/* 4. LEADERBOARD TABLE REPAIR */
 .leaderboard-table {
     width: 100% !important;
     border-collapse: collapse !important;
+    background: rgba(0,0,0,0.2) !important;
 }
-
 .leaderboard-table th {
     color: #00f0ff !important;
-    text-transform: uppercase !important;
+    border-bottom: 2px solid #00f0ff !important;
     padding: 15px !important;
-    border-bottom: 2px solid rgba(0, 240, 255, 0.3) !important;
 }
-
 .leaderboard-table td {
     padding: 15px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
 }
 
-/* 7. TAGS & BUTTONS */
-.tag {
-    display: inline-block !important;
-    background: rgba(0, 240, 255, 0.1) !important;
-    color: #00f0ff !important;
-    border: 1px solid #00f0ff !important;
-    padding: 4px 12px !important;
-    border-radius: 50px !important;
-    font-size: 0.75rem !important;
-    font-weight: 700 !important;
-    margin-bottom: 15px !important;
+/* 5. OVERRIDE ANY WEIRD MARGINS FROM 2200 LINES */
+section {
+    padding: 60px 0 !important;
+    overflow: visible !important;
 }
+   ========================================================================== */
 
-.btn-primary, .btn-submit {
-    background: #00f0ff !important;
-    color: #000 !important;
-    font-weight: 800 !important;
-    text-transform: uppercase !important;
-    padding: 12px 30px !important;
-    border-radius: 50px !important;
-    border: none !important;
-    box-shadow: 0 0 15px #00f0ff !important;
-    cursor: pointer !important;
-    transition: 0.3s !important;
-}
-
-.btn-primary:hover {
-    box-shadow: 0 0 30px #00f0ff !important;
-    transform: scale(1.05) !important;
-}
-
-/* 8. MOBILE OPTIMIZATION */
-@media (max-width: 768px) {
-    .team-grid, .research-grid, .events-grid {
-        grid-template-columns: 1fr !important;
-        padding: 20px !important;
-    }
-    .section-title { margin-top: 100px !important; }
-}
+/* 1. Global Page Setup */
