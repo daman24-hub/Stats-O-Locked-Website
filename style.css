@@ -2193,6 +2193,36 @@ footer {
     --bg-glass: rgba(255,255,255,0.05);
 }
 
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #020b16;
+    color: #e0e6ed;
+    overflow-x: hidden;
+}
+
+/* Animated background grid */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,240,255,0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveBg 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveBg {
+    from { transform: translate(0,0); }
+    to { transform: translate(-200px,-200px); }
+}
+
 /* ================= CONTAINER ================= */
 .container { 
     max-width: 1200px; 
@@ -2204,7 +2234,7 @@ footer {
     align-items: center;
 }
 
-/* ================= TITLE (ANIMATED GLOW) ================= */
+/* ================= TITLE ================= */
 .team-page-title {
     font-family: 'Space Grotesk', sans-serif !important;
     font-size: clamp(3.5rem, 12vw, 5.5rem) !important;
@@ -2212,22 +2242,23 @@ footer {
     text-transform: uppercase !important;
     letter-spacing: 6px !important;
     margin: 160px 0 70px !important;
-    color: #ffffff !important;
-    display: block !important;
 
-    animation: glowPulse 3s infinite alternate;
+    background: linear-gradient(90deg, #00f0ff, #8a2eff, #ff00c8, #00f0ff);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientMove 6s linear infinite, glowPulse 3s infinite alternate;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% center; }
+    100% { background-position: 300% center; }
 }
 
 @keyframes glowPulse {
-    0% {
-        text-shadow: 0 0 10px var(--primary),
-                     0 0 20px var(--primary);
-    }
-    100% {
-        text-shadow: 0 0 20px var(--primary),
-                     0 0 40px var(--secondary),
-                     0 0 80px var(--accent);
-    }
+    0% { text-shadow: 0 0 10px var(--primary); }
+    100% { text-shadow: 0 0 40px var(--secondary), 0 0 80px var(--accent); }
 }
 
 /* ================= TIER SECTION ================= */
@@ -2246,13 +2277,10 @@ footer {
     letter-spacing: 3px !important;
     margin-bottom: 50px !important;
     font-size: 1.2rem !important;
-    display: inline-block !important;
-    padding: 0 20px 10px !important;
-
     position: relative;
 }
 
-/* Animated underline */
+/* underline animation */
 .tier-label::after {
     content: "";
     position: absolute;
@@ -2279,27 +2307,45 @@ footer {
     width: 100% !important;
 }
 
-/* ================= 3D CARD ================= */
+/* ================= CARD ================= */
 .member-card, .team-card {
-    background: var(--bg-glass) !important;
-    border-radius: 20px !important;
-    padding: 40px 20px !important;
-    text-align: center !important;
+    background: var(--bg-glass);
+    border-radius: 20px;
+    padding: 40px 20px;
+    text-align: center;
 
-    backdrop-filter: blur(15px) !important;
+    backdrop-filter: blur(15px);
     position: relative;
     overflow: hidden;
 
-    transition: all 0.4s ease !important;
-
+    transition: all 0.4s ease;
     transform-style: preserve-3d;
-    perspective: 1000px;
 
-    opacity: 1 !important;
-    visibility: visible !important;
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    animation: revealCard 0.8s ease forwards, floatCard 6s ease-in-out infinite;
 }
 
-/* Animated gradient border */
+/* stagger animation */
+.member-card:nth-child(1) { animation-delay: 0.1s; }
+.member-card:nth-child(2) { animation-delay: 0.2s; }
+.member-card:nth-child(3) { animation-delay: 0.3s; }
+.member-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes revealCard {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* floating */
+@keyframes floatCard {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* animated border */
 .member-card::before {
     content: "";
     position: absolute;
@@ -2307,49 +2353,55 @@ footer {
     border-radius: 20px;
     padding: 2px;
     background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent));
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-
     animation: borderRotate 4s linear infinite;
 }
 
 @keyframes borderRotate {
-    0% { filter: hue-rotate(0deg); }
     100% { filter: hue-rotate(360deg); }
 }
 
-/* HOVER 3D EFFECT */
+/* shine sweep */
+.member-card::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: rotate(25deg);
+    transition: 0.6s;
+}
+
+.member-card:hover::after {
+    top: 100%;
+    left: 100%;
+}
+
+/* hover */
 .member-card:hover {
-    transform: rotateY(10deg) rotateX(10deg) translateY(-15px) scale(1.05) !important;
-    box-shadow: 0 20px 60px rgba(0, 240, 255, 0.3);
-}
-
-/* Floating animation */
-.member-card {
-    animation: floatCard 6s ease-in-out infinite;
-}
-
-@keyframes floatCard {
-    0%,100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    transform: rotateY(12deg) rotateX(12deg) translateY(-15px) scale(1.07);
+    box-shadow: 
+        0 20px 60px rgba(0,240,255,0.3),
+        0 0 80px rgba(138,46,255,0.2);
 }
 
 /* ================= IMAGE ================= */
-.img-circle, .team-img {
-    width: 120px !important;
-    height: 120px !important;
-    border-radius: 50% !important;
-    margin-bottom: 20px !important;
-    overflow: hidden !important;
+.img-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    overflow: hidden;
     position: relative;
-
     transition: 0.4s;
+    transform: translateZ(40px);
 }
 
-/* Neon ring animation */
+/* neon ring */
 .img-circle::before {
     content: "";
     position: absolute;
@@ -2364,6 +2416,10 @@ footer {
     100% { transform: rotate(360deg); }
 }
 
+.img-circle:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
 .img-circle img {
     width: 100%;
     height: 100%;
@@ -2372,11 +2428,11 @@ footer {
 
 /* ================= TEXT ================= */
 .member-card h3 {
-    font-family: 'Space Grotesk', sans-serif !important;
-    font-size: 1.4rem !important;
-    color: #fff !important;
-    margin-bottom: 8px !important;
-
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 8px;
+    transform: translateZ(30px);
     transition: 0.3s;
 }
 
@@ -2385,17 +2441,18 @@ footer {
     letter-spacing: 1px;
 }
 
+/* role neon flicker */
 .member-card .role {
-    color: var(--primary) !important;
-    font-size: 0.9rem !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
-
-    opacity: 0.8;
+    color: var(--primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transform: translateZ(20px);
+    animation: flicker 2s infinite alternate;
 }
 
-/* ================= REVEAL ================= */
-.revealed {
-    opacity: 1 !important;
-    transform: translateY(0px) !important;
+@keyframes flicker {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; text-shadow: 0 0 10px var(--primary); }
+    100% { opacity: 0.7; }
 }
