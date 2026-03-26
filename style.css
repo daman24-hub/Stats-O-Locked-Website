@@ -2321,9 +2321,28 @@ body::before {
     transition: all 0.4s ease;
     transform-style: preserve-3d;
 
-    /* GSAP will control animation */
     opacity: 0;
     transform: translateY(50px) scale(0.95);
+    animation: revealCard 0.8s ease forwards, floatCard 6s ease-in-out infinite;
+}
+
+/* stagger animation */
+.member-card:nth-child(1) { animation-delay: 0.1s; }
+.member-card:nth-child(2) { animation-delay: 0.2s; }
+.member-card:nth-child(3) { animation-delay: 0.3s; }
+.member-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes revealCard {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* floating */
+@keyframes floatCard {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 /* animated border */
